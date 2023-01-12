@@ -1,0 +1,66 @@
+
+<div class="toolbar">
+        <img
+        alt="Logo COVEICyDET"
+        src="https://www.sev.gob.mx/media-superior/wp-content/uploads/2021/02/logo_coveicydet.png"/>
+    <p>COVEICyDET</p>
+</div>
+
+<div class="main_div">
+   <form class="general_form" action="post">
+       <h1>Agregar libros o capítulos</h1> 
+
+    <div class="input_div">                             
+     <div>
+       <label form="titulo_input">Título.</label>
+       <input type="text" 
+              id="titulo_input"
+              name="titulo"
+              placeholder="Título"
+              required="required"
+              
+              />
+    </div>
+
+      <div>
+        <label form="autor_input">Autor.</label>
+        <input type="text" 
+               id="autor_input" 
+               placeholder="Autor"
+               required="required"
+               name="autor"
+               
+               />
+      </div>
+   </div>
+    
+    <div class="input_div">
+     <div>
+        <label form="editorial_input">Editorial.</label>
+        <input type="text" 
+               id="editorial_input" 
+               placeholder="Editorial"
+               required="required"
+               name="editorial"
+              
+               />
+     </div>
+
+     <div>
+        <label form="referencia_input">Referencia.</label>
+        <input type="text" 
+               id="referencia"
+               placeholder="Referencia"
+               required="required"
+               name="referencia" 
+               
+               />
+     </div>
+     </div>
+
+     <div class="button_div">
+      <button type="submit" (click)="guardar()" >Guardar</button>
+      <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
+   </div> 
+    
+</form>

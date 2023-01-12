@@ -1,0 +1,75 @@
+
+<div class="toolbar">
+  <img
+  alt="Logo COVEICyDET"
+  src="https://www.sev.gob.mx/media-superior/wp-content/uploads/2021/02/logo_coveicydet.png"/>
+<p>COVEICyDET</p>
+</div>
+<form class="" 
+      autocomplete="off"
+      >
+                
+    <span class="login100-form-title p-b-49">
+        Login
+    </span>
+
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Titulo</span>
+        <input class="input100"
+               type="titulo" 
+               formControlName="titulo" 
+               placeholder="Titulo del libro">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Autor</span>
+        <input class="input100"
+               type="autor" 
+               formControlName="autor"
+               placeholder="Nombre del Autor o Coautor">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="wrap-input100">
+        <span class="label-input100">Editorial</span>
+        <input class="input100"
+               type="Editorial"
+               formControlName="editorial"
+               placeholder="Editorial">
+        <span class="focus-input100"></span>
+    </div>
+</form>
+    
+<div class="main_div">
+  <h1>Producción Cientifica / Autoria - Coautoria de libros</h1>
+  <table class="table_books" border="1">
+
+    <tr>
+      <td class="title">Título</td>
+      <td class="title">Autor/Coautor</td>
+      <td class="title">Editorial</td>
+      <td class="title"> Acciones </td>
+    </tr>
+
+    <tr>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+    </tr>
+
+    <tr>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+      <td> Lorem Ipsum </td>
+    </tr>
+  </table>
+  
+  <div class="button_div">
+    <button type="submit" (click)="agregar()">Agregar</button>
+    <button id="next_button" type="submit" (click)="siguiente()" href="proyectos-de-investigacion">Siguiente</button>
+ </div>
+
+</div>

@@ -28,4 +28,8 @@ export class DashboardComponent {
     this.authService.logout();
 
   }
+
+  siguiente(){
+    this.router.navigate(['/adscripciones']);
+  }
 }

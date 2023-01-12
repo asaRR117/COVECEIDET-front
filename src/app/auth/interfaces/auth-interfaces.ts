@@ -8,6 +8,8 @@ export interface AuthResponse {
     rfc?: string;
     token?: string;
     msg?: string;
+    email?: string;
+    //password?: string;
 
 }
 
@@ -17,5 +19,7 @@ export interface Usuario {
     name: string;
     apellidos: string;
     rfc: string;
+    email: string;
+   // password: string;
     
 }

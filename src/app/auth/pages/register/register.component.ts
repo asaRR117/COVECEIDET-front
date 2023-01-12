@@ -27,12 +27,18 @@ export class RegisterComponent {
   registro() {
     console.log(this.miRegisterForm.value);
 
+    //const errores = this.miRegisterForm.value;
+
+    //console.log(errores);
+
     
     const { email, name, apellidos, rfc, password } = this.miRegisterForm.value;
 
     this.authService.registro( email, name, apellidos, rfc, password)
       .subscribe( ok => {
-        console.log(ok)
+       console.log(ok)     
+
+        
         if ( ok === true) {
           this.router.navigateByUrl('/dashboard');
         } else {

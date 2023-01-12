@@ -1,0 +1,65 @@
+
+<div class="toolbar">
+        <img
+        alt="Logo COVEICyDET"
+        src="https://www.sev.gob.mx/media-superior/wp-content/uploads/2021/02/logo_coveicydet.png"/>
+    <p>COVEICyDET</p>
+</div>
+
+<div class="main_div">
+    <form class="general_form" action="post">
+       <h1>Registrar obtencion de grado del candidato</h1> 
+
+     <div class="input_div">
+       <div>
+        <label form="nombre_input">Nombre.</label>
+        <input type="text" 
+               id="nombre_input" 
+               placeholder="Registrar nombre"
+               required="required"
+               name="nombre"
+              
+               />
+     </div>
+
+     <div>
+        <label form="institucion_input">Institución.</label>
+        <input type="text" 
+               id="institucion_input" 
+               name="institucion"
+               placeholder="Nombre de la institución"
+               required="required"
+               
+               />
+      </div>
+    </div>
+
+     <div class="input_div">
+      <div>
+        <label form="año_input">Año.</label>
+        <select>
+            <option selected disabled>Selecciona una opción</option>
+            <option>1</option>
+         </select>
+     </div> 
+
+     <div>
+        <label form="nivel_input">Nivel</label>
+        <select>
+        <option selected disabled>Selecciona una opción</option>
+        <option>1</option>
+     </select>
+    </div>
+</div>
+
+    <div class="button_div">
+        <button type="submit" (click)="guardar()" >Guardar</button>
+        <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
+    </div> 
+   
+
+</form>
+</div>
+
+
+

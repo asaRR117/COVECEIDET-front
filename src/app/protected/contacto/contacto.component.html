@@ -1,0 +1,56 @@
+
+<div class="toolbar">
+   <img
+   alt="Logo COVEICyDET"
+   src="https://www.sev.gob.mx/media-superior/wp-content/uploads/2021/02/logo_coveicydet.png"/>
+   <p>COVEICyDET</p>
+</div>
+
+<div class="main_div">
+   <form class="contacto_form"
+         autocomplete="off"
+         
+        >
+      <h1>Informacion General / Contacto</h1>
+      
+      <div class="input_div">
+         <div>
+            <label for="email_input">Correo personal</label>
+            <input
+               id="email_input"
+               type="email"              
+               formControlName= "email"
+               placeholder="Correo personal"
+               required = "required"
+            />
+         </div>
+         <div>
+            <label for="emailinst_input">Correo institucional</label>
+            <input
+               id="emailinst_input"
+               type="emailinst"               
+               formControlName = "emailinst"
+               placeholder="Correo institucional"
+               required = "required"
+            />
+         </div>
+         <div>
+            <label for="phone_input">Telefono</label>
+            <input
+               id="phone_input"
+               type="phone"              
+               formControlName = "phone"
+               placeholder="Telefono"
+               required = "required"
+            />
+         </div>
+      </div>
+            
+      <div class="button_div">
+         <button type="submit" (click)="guardar()">Guardar</button>
+         <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
+      </div>
+
+     </form>
+  
+</div>
