@@ -1,0 +1,158 @@
+
+<div class="toolbar">
+        <img
+        alt="Logo COVEICyDET"
+        src="https://www.sev.gob.mx/media-superior/wp-content/uploads/2021/02/logo_coveicydet.png"/>
+    <p>COVEICyDET</p>
+</div>
+
+<div class="main_div">
+    <form class="general_form" 
+          autocomplete="off"
+          [formGroup]="pinvestigacionForm"
+          (ngSubmit)="subirPinvestigacion()">
+    <h1>Proyectos de investigacón.</h1>
+
+    <div class="input_div">
+    <div>
+            <label form="referencia_input">Referencia.</label>
+            <input type="text" 
+                   id="referencia_input" 
+                   name="referencia"
+                   placeholder="Registrar referencia"
+                   required="required"
+                   
+                   />
+     </div>
+
+     <div>
+        <label form="titulo_input">Título.</label>
+        <input type="text" 
+               id="titulo_input" 
+               name="titulo"
+               placeholder="Registrar título"
+               required="required"
+              
+               />
+    </div>
+
+    <div>
+        <label form="particion_input">Partición.</label>
+        <input type="text" 
+               id="particion_input" 
+               name="particion"
+               placeholder="Particion"
+               required="requiered"
+               
+               />
+    </div>
+</div>
+<div class="input_div">
+    <div>
+        <label form="fecha_input">Fecha de inicio.</label>
+        <input type="date" 
+               id="fecha_input" 
+               name="fecha"
+               required="required"
+               
+               />
+    </div>
+
+    <div >
+        <label form="termino_input">Fecha de termino.</label>
+        <input type="date" 
+               id="termino_input"
+               required="required"
+              
+              name="termino"
+              />
+    </div>
+    
+    <div class="proyectos-de-investigacion col-md-3" >
+        <label form="fechat">Area.</label>
+        <select>
+            <option selected disabled>Seleccione una opción</option>
+        </select>
+    </div>
+   </div>
+
+   <div class="input_div">
+    <div class="proyectos-de-investigacion col-md-3" >
+        <label form="Institucion_input">Institución principal.</label>
+        <input type="text" 
+               id="Institucion_input" 
+               name="instucion"
+               placeholder="Ingresar institucion"
+               required="required"
+               
+               />
+    </div>
+
+    <div>
+        <label form="asociaciones_input">Instituciones asociadas.</label>
+        <input type="text" 
+               id="asociaciones_input" 
+               name="asociaciones"
+               placeholder="Ingresar institución asociada"
+               required="requiered"
+               >
+    </div>
+
+    <div>
+        <select>
+        <label form="p2">Fuente de financiamiento.</label>
+        <option selected disabled>Selecciona una opción</option>
+        <option>Gobierno Federal</option>
+        <option>Gobierno Estatal</option>
+        <option>Conacyt</option>
+        <option>ONG</option>
+        <option>Fomix</option>
+        <option>Institución perteneciente</option>
+        <option>Otro</option>
+        </select>
+        </div>
+    </div>
+     
+     <div class="input_div">
+        <div>
+            <label form="monto_input">Monto del financiamiento.</label>
+            <input type="number" 
+                   id="monto_input"
+                   name="monto"
+                   placeholder="Ingresar monto"
+                   required="required"
+                   
+                   />
+        </div>
+    
+        <div>
+            <label>Productos derivados.</label>
+            <select>
+                <option selected disabled> Seleciona una opción</option>
+                <option>Reporte técnicos</option>
+                <option>Prototipo</option>
+                <option>Publicación</option>
+            </select>
+            </div>
+        
+            <div>
+                <label form="usuario_input">Usuarios.</label>
+                <input type="text"
+                       id="usuario_input" 
+                       name="usuario"
+                       placeholder="Registrar usuario"
+                       required="required"
+                       
+                       />
+            </div>
+        </div>
+
+        
+        <div class="button_div">
+            <button type="submit" (click)="subirPinvestigacion()">Guardar</button>
+            <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
+         </div>
+</form>
+</div>
+
+

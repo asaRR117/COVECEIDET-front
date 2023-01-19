@@ -19,6 +19,8 @@ import { ItecnologicaComponent } from './itecnologica/itecnologica.component';
 import { PproyectoComponent } from './pproyecto/pproyecto.component';
 import { IacademicaComponent } from './iacademica/iacademica.component';
 import { PcientificaComponent } from './pcientifica/pcientifica.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PinvestigacionComponent } from './pinvestigacion/pinvestigacion.component';
 
 
 @NgModule({
@@ -40,11 +42,13 @@ import { PcientificaComponent } from './pcientifica/pcientifica.component';
     PproyectoComponent,
     IacademicaComponent,
     PcientificaComponent,
+    PinvestigacionComponent,
     
   ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProtectedModule { }

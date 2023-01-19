@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-contacto',
@@ -8,25 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent {
 
-  email: String;
-  emailInst: String;
-  phone: String;
-  movil: String;
-  institucion: String;
-  adscipcion: String;
+  contactoForm: FormGroup = this.fb.group({
+    correop: ['', [Validators.required, Validators.email]],
+    correoins: ['', [Validators.required, Validators.email]],
+    numero: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
+  });
 
-  constructor() { 
-    this.email = "";
-    this.emailInst = "";
-    this.phone = "";
-    this.movil = "";
-    this.institucion = "";
-    this.adscipcion = "";
-  }
 
-guardar() {}
+  constructor( private fb: FormBuilder,
+               private router: Router,
+               private authService: AuthService ) { } 
+    
+guardarContacto() {
 
-siguiente() {}
+  const { correop, correoins, numero } = this.contactoForm.value;
+
+  console.log(this.contactoForm.value);
+  console.log(this.contactoForm.valid);
+
+
+  this.authService.subirContacto( correop, correoins, numero )
+    .subscribe( ok => {
+
+    })
+}
+
+siguiente() {
+
+  this.router.navigateByUrl('/desarrollo');
+}
 
 
 }

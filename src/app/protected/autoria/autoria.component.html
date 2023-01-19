@@ -7,12 +7,9 @@
 </div>
 <form class="" 
       autocomplete="off"
-      >
-                
-    <span class="login100-form-title p-b-49">
-        Login
-    </span>
-
+      [formGroup]="autoriaForm"
+      (ngSubmit)="agregarAutoria()">|
+   
     <div class="wrap-input100 m-b-23">
         <span class="label-input100">Titulo</span>
         <input class="input100"
@@ -68,8 +65,8 @@
   </table>
   
   <div class="button_div">
-    <button type="submit" (click)="agregar()">Agregar</button>
-    <button id="next_button" type="submit" (click)="siguiente()" href="proyectos-de-investigacion">Siguiente</button>
+    <button type="submit" (click)="agregarAutoria()">Agregar</button>
+    <button  type="submit" (click)="siguiente()" href="proyectos-de-investigacion">Siguiente</button>
  </div>
 
 </div>

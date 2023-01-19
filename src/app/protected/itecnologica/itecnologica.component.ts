@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-itecnologica',
@@ -8,21 +11,35 @@ import { Component } from '@angular/core';
 })
 export class ItecnologicaComponent  {
 
-  tipo:string;
-  nombre:string;
-  numero:string;
-  fecha:string;
+  itecnologicaForm: FormGroup = this.fb.group({
+    tipo: ['',Validators.required],
+    producto: ['',Validators.required],
+    registro: ['',Validators.required],
+    fregistro: ['',Validators.required]
+  });
 
-  constructor() { 
-    this.tipo="";
-    this.nombre="";
-    this.numero="";
-    this.fecha="";
+  constructor( private fb: FormBuilder,
+               private router: Router,
+               private authService: AuthService) { }
+
+
+  subirItecnologica() {
+
+    const { tipo, producto, registro, fregistro } = this.itecnologicaForm.value;
+
+    console.log(this.itecnologicaForm.value);
+    console.log(this.itecnologicaForm.valid);
+
+    this.authService.subirItecnologica( tipo, producto, registro, fregistro) 
+      .subscribe( ok => {
+
+
+      })
   }
 
+  siguiente() {
 
-  guardar() {}
-
-  siguiente() {}
+    this.router.navigateByUrl('/libro');
+  }
 
 }

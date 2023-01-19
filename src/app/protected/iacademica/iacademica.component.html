@@ -7,52 +7,50 @@
 </div>
 
 <div class="main_div">
-   <form class="nacimiento_form">
+   <form class="nacimiento_form"
+         [autocomplete="off"
+         [formGroup]="iacademicaForm"
+         (ngSubmit)="subirIacademica()">
       <h1>Agregar información académica</h1>
       
    <div class="input_div">
     <div class="nivel">
-    <label form="nivel">Nivel.</label>
-       <select>
-       <option selected disabled>Selecciona una opción.</option> 
-       <option>Licenciatura.</option>
-       <option>Especialidad.</option> 
-       <option>Maestria.</option>
+    <label form="nivel">Nivel: </label>
+       <select formControlName="nivel">
+       <option>Licenciatura</option>
+       <option>Especialidad</option> 
+       <option>Maestria</option>
        <option>Doctorado</option>
        </select>
     </div>
 
     <div>
-       <label form="titulo_input">Título.</label>
+       <label form="titulo_input">Título: </label>
        <input 
-             type="titulo" 
+             type="text" 
              id="titulo_input" 
              name="titulo"
-             placeholder="Título"
-             
-             required="requiered"
+             formControlName="titulo"
              />
     </div>
     </div> 
  
        <div class="input_div">
          <div>
-        <label form="institucion_input">Institución.</label>
+        <label form="institucion_input">Institución:</label>
         <input 
-              type="instucion" 
+              type="text" 
               id="institucion_input"
               name="institucion"
               placeholder="Nombre de la institución"
-              required="requiered"
-              
+              formControlName="institucion"
               />
      </div>
 
 
      <div >
-        <label form="año_input"> Año.</label>
-        <select>
-            <option selected disabled>Selecciona una opción.</option>
+        <label form="año_input"> Año:</label>
+        <select formControlName="year">
             <option>1</option>
             <option>2</option>
             <option>3</option> 
@@ -61,7 +59,7 @@
    </div>
    
      <div class="button_div">
-      <button type="submit" (click)="aceptar()">Aceptar</button>
+      <button type="submit">Aceptar</button>
       <button id="next_button" type="submit" (click)="siguiente()">Cancelar</button>
    </div>
      

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-divulgacion',
@@ -8,23 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DivulgacionComponent{
 
-  nombre:string;
-  autor:string;
-  revista:string;
-  fecha:string;
-  termino:string;
+  divulgacionForm: FormGroup = this.fb.group({
+    nombre: ['', Validators.required],
+    revista: ['',  Validators.required],
+    autor: ['', Validators.required],
+    faceptacion: ['', Validators.required],
+    fpublicacion: ['', Validators.required]
+  });
 
-  constructor() { 
-    this.nombre="";
-    this.autor="";
-    this.revista="";
-    this.fecha="";
-    this.termino="";
+  constructor( private fb: FormBuilder,
+               private router: Router,
+               private authService: AuthService) { }
+    
+
+  subirDivulgacion() {
+
+    console.log(this.divulgacionForm.value);
+    const { nombre, revista, autor,  faceptacion, fpublicacion } = this.divulgacionForm.value;
+
+    this.authService.subirDivulgacion( nombre, revista, autor, faceptacion, fpublicacion )
+      .subscribe( ok => {
+        
+      });
   }
 
-  guardar() {}
+  siguiente() {
 
-  siguiente() {}
+    this.router.navigateByUrl('/estancia');
+  }
   
 
 }

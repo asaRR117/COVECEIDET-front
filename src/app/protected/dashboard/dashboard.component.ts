@@ -30,6 +30,6 @@ export class DashboardComponent {
   }
 
   siguiente(){
-    this.router.navigate(['/adscripciones']);
+    this.router.navigate(['/autoria']);
   }
 }

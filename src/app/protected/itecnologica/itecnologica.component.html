@@ -7,7 +7,10 @@
 </div>
 
 <div class="main_div">
- <form class="general_form" action="post">
+ <form class="general_form"
+       autocomplete="off"
+       [formGroup]="itecnologicaForm"
+       (ngSubmit)="subirItecnologica()">
     <h1>Agregar Implementación técnologica.</h1> 
   
     <div class="input_div">  
@@ -16,9 +19,7 @@
         <input type="text" 
                id="tipo_input" 
                placeholder="Tipo"
-               required="required"
-               name="tipo"
-              
+               formControlName="tipo"
                />
      </div>
 
@@ -27,9 +28,7 @@
         <input type="text" 
                id="nombre_input" 
                placeholder="Nombre del producto"
-               required="required"
-               name="nombre"
-              
+               formControlName="producto"              
                />
      </div>
     </div>
@@ -40,9 +39,7 @@
         <input type="text" 
                id="numero_input" 
                placeholder="No. de registro"
-               required="required"
-               name="numero"
-              
+               formControlName="registro"              
                />
      </div>
 
@@ -50,15 +47,13 @@
         <label form="fecha_input">Fecha de registro.</label>
         <input type="date" 
                id="fecha_input" 
-               required="required"
-               name="fecha"
-              
+               formControlName="fregistro"
                />
     </div>
     </div>
 
    <div class="button_div">
-    <button type="submit" (click)="guardar()" >Guardar</button>
+    <button type="submit">Guardar</button>
     <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
    </div> 
 

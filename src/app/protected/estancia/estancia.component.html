@@ -7,7 +7,10 @@
 </div>
 
 <div class="main_div">
-    <form class="general_form" action="post">
+    <form class="general_form"
+          autocomplete="off"
+          [formGroup]="estanciaForm"
+          (ngSubmit)="subirEstancia()">
        <h1>Registrar estancias.</h1> 
      
      <div class="input_div"> 
@@ -16,9 +19,7 @@
         <input type="text" 
                id="institucion_input" 
                placeholder="Registrar institución"
-               required="required"
-               name="institucion"
-               
+               formControlName="institucion"              
                />
      </div>
 
@@ -28,8 +29,7 @@
                id="proyecto_input" 
                placeholder="Nonmbre del proyecto"
                required="required"
-               name="proyecto"
-               
+               formControlName="proyecto"              
                />
         </div>
      </div>
@@ -39,9 +39,7 @@
         <label form="fecha_input">Fecha de inicio.</label>
         <input type="date" 
                id="fecha_input" 
-               required="required"
-               name="fecha"
-               
+               formControlName="finicio"               
               />
      </div>
 
@@ -49,15 +47,13 @@
         <label form="termino_input">Fecha de termino.</label>
         <input type="date" 
                 id="termino_input "
-                 required="required"
-                 name="termino"
-                
+                formControlName="ftermino"                                
                 />
      </div>
      </div>
 
      <div class="button_div">
-        <button type="submit" (click)="guardar()" >Guardar</button>
+        <button type="submit">Guardar</button>
         <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
        </div>
 </form>

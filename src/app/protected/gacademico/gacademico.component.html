@@ -7,54 +7,51 @@
 </div>
 
 <div class="main_div">
-    <form class="general_form" action="post">
+    <form class="general_form"
+          autocomplete="off"
+          [formGroup]="gacademicoForm"
+          (ngSubmit)="subirGacademico()">
        <h1>Agregar grado académico en PNCP</h1> 
      
      <div class="input_div"> 
        <div>
-        <label form="nivel_input">Nivel</label>
-        <select>
-        <option selected disabled>Selecciona una opción</option>
-        <option>1</option>
+        <label form="nivel_input">Nivel: </label>
+        <select formControlName="nivel">
+        <option value="1">1</option>
      </select>
      </div>
 
      <div>
-        <label form="titulo_input">Título.</label>
+        <label form="titulo_input">Título: </label>
         <input type="text" 
                id="titulo_input" 
                placeholder="Titulo"
-               required="required"
-               name="titulo"
-               
+               formControlName="titulo"               
                />
      </div>
      </div>
     
     <div class="input_div"> 
      <div>
-        <label form="institucion_input">Institución.</label>
+        <label form="institucion_input">Institución: </label>
         <input type="text" 
                id="institucion_input" 
-               name="institucion"
                placeholder="Nombre de la institución"
-               required="required"
-               
+               formControlName="institucion"
                />
       </div>
 
      <div class="agregar-grado col-md-3">
-        <label form="año_input">Año.</label>
-        <select>
-            <option selected disabled>Selecciona una opción</option>
-            <option>1</option>
+        <label form="año_input">Año: </label>
+        <select formControlName="year">
+            <option value="1">1</option>
          </select>
      </div> 
      </div>
 
 
      <div class="button_div">
-        <button type="submit" (click)="guardar()" >Guardar</button>
+        <button type="submit">Guardar</button>
         <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
        </div> 
 

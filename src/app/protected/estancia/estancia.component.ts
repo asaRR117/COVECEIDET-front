@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
+import { Estancia } from '../../auth/interfaces/auth-interfaces';
 
 @Component({
   selector: 'app-estancia',
@@ -8,20 +12,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstanciaComponent {
 
-  institucion:string;
-  proyecto:string;
-  fecha:string;
-  termino:string;
+  estanciaForm: FormGroup = this.fb.group({
+    institucion: ['', Validators.required],
+    proyecto: ['', Validators.required],
+    finicio: ['', Validators.required],
+    ftermino: ['', Validators.required]
+  });
+ 
 
-  constructor() {
-    this.institucion="";
-    this.proyecto="";
-    this.fecha="";
-    this.termino="";
-   }
+  constructor( private fb: FormBuilder,
+               private router: Router,
+               private authService: AuthService) {}
 
-   guardar () {}
+  subirEstancia() {
 
-   siguiente() {}
-   
+    console.log(this.estanciaForm.value);
+    console.log(this.estanciaForm.valid);
+
+    const {institucion, proyecto, finicio, ftermino} = this.estanciaForm.value;
+
+    this.authService.subirEstancia( institucion, proyecto, finicio, ftermino)
+      .subscribe( ok => {
+
+      })
+  }
+
+  siguiente() {
+
+    this.router.navigateByUrl('/grado_academico');
+  }
+
 }

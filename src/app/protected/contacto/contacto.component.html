@@ -9,8 +9,8 @@
 <div class="main_div">
    <form class="contacto_form"
          autocomplete="off"
-         
-        >
+         [formGroup]="contactoForm"
+         (ngSubmit)="guardarContacto()">
       <h1>Informacion General / Contacto</h1>
       
       <div class="input_div">
@@ -19,7 +19,7 @@
             <input
                id="email_input"
                type="email"              
-               formControlName= "email"
+               formControlName= "correop"
                placeholder="Correo personal"
                required = "required"
             />
@@ -29,7 +29,7 @@
             <input
                id="emailinst_input"
                type="emailinst"               
-               formControlName = "emailinst"
+               formControlName = "correoins"
                placeholder="Correo institucional"
                required = "required"
             />
@@ -39,7 +39,7 @@
             <input
                id="phone_input"
                type="phone"              
-               formControlName = "phone"
+               formControlName = "numero"
                placeholder="Telefono"
                required = "required"
             />
@@ -47,7 +47,7 @@
       </div>
             
       <div class="button_div">
-         <button type="submit" (click)="guardar()">Guardar</button>
+         <button type="submit">Guardar</button>
          <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
       </div>
 

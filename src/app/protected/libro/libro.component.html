@@ -7,42 +7,39 @@
 </div>
 
 <div class="main_div">
-   <form class="general_form" action="post">
+   <form class="general_form"
+         [autocomplete="off"
+         [formGroup]="libroForm"
+         (ngSubmit)="subirLibro()">
        <h1>Agregar libros o capítulos</h1> 
 
     <div class="input_div">                             
      <div>
-       <label form="titulo_input">Título.</label>
+       <label form="titulo_input">Título:</label>
        <input type="text" 
               id="titulo_input"
-              name="titulo"
               placeholder="Título"
-              required="required"
-              
+              formControlName="titulo"
               />
     </div>
 
       <div>
-        <label form="autor_input">Autor.</label>
+        <label form="autor_input">Autor:</label>
         <input type="text" 
                id="autor_input" 
                placeholder="Autor"
-               required="required"
-               name="autor"
-               
+               formControlName="autor"
                />
       </div>
    </div>
     
     <div class="input_div">
      <div>
-        <label form="editorial_input">Editorial.</label>
+        <label form="editorial_input">Editorial:</label>
         <input type="text" 
                id="editorial_input" 
                placeholder="Editorial"
-               required="required"
-               name="editorial"
-              
+               formControlName="editorial"
                />
      </div>
 
@@ -51,15 +48,13 @@
         <input type="text" 
                id="referencia"
                placeholder="Referencia"
-               required="required"
-               name="referencia" 
-               
+               formControlName="referencia"               
                />
      </div>
      </div>
 
      <div class="button_div">
-      <button type="submit" (click)="guardar()" >Guardar</button>
+      <button type="submit">Guardar</button>
       <button id="next_button" type="submit" (click)="siguiente()">Siguiente</button>
    </div> 
     

@@ -7,50 +7,51 @@
 </div>
 
 <div class="main_div">
-    <form class="general_form" action="post">
+    <form class="general_form" 
+          autocomplete="off"
+          [formGroup]="desarrolloForm"
+          (ngSubmit)="subirDesarrollo()">
     
         <div class="input_div">
        <div >
-       <label form="p1">Area </label>
-       <select>
-       <option selected disabled>Selecciona una opción.</option> 
-       <option>Física, Matemáticas y Ciencias de la Tierra.</option>
-       <option>Biología y química.</option> 
-       <option>Medicina y salud.</option>
-       <option>Humanidades y ciencias de la conducta.</option>
-       <option>Sociales y económicas.</option>
-       <option>Biotecnogía y ciencias agropecuarias.</option>
-       <option>Ingeniería e industria.</option>
+       <label form="p1"
+              >Area:  </label>
+       <select formControlName="area">
+       <option value="Física, Matemáticas y Ciencias de la Tierra">Física, Matemáticas y Ciencias de la Tierra</option>
+       <option value="Biología y química">Biología y química</option> 
+       <option value="Medicina y salud">Medicina y salud</option>
+       <option value="Humanidades y ciencias de la conducta">Humanidades y ciencias de la conducta</option>
+       <option value="Sociales y económicas">Sociales y económicas</option>
+       <option value="Biotecnología y ciencias agropecuarias">Biotecnología y ciencias agropecuarias</option>
+       <option value="Ingeniería e industria">Ingeniería e industria</option>
        </select>
     </div>
    
         <div >
-        <label>Campo.</label>
-        <select>
-            <option selected disabled>Selecciona una opción.</option>
-            <option>Lógica.</option>
-            <option>Matemáticas</option>
-            <option>Astronomía y Astrofísica</option>
-            <option>Física</option>
-            <option>Ciencias de la tierra y del cosmos</option>
-            <option>Química</option>
-            <option>Ciencias de la vida</option>
-            <option>Medicina y patologia humana</option>
-            <option>Antropología</option>
-            <option>Historia</option>
-            <option>LingÜística</option>
-            <option>Pedagogía</option>
-            <option>Psicopedagogía.</option>
+        <label>Campo:  </label>
+        <select formControlName="campo">
+            <option value="Lógica">Lógica</option>
+            <option value="Matemáticas">Matemáticas</option>
+            <option value="Astronomía y Astrofísica">Astronomía y Astrofísica</option>
+            <option value="Física">Física</option>
+            <option value="Ciencias de la tierra y del cosmos">Ciencias de la tierra y del cosmos</option>
+            <option value="Química">Química</option>
+            <option value="Ciencias de la vida">Ciencias de la vida</option>
+            <option value="Medicina y patologia humana">Medicina y patologia humana</option>
+            <option value="Antropología">Antropología</option>
+            <option value="Historia">Historia</option>
+            <option value="LingÜística">LingÜística</option>
+            <option value="Pedagogía">Pedagogía</option>
+            <option value="Psicopedagogía">Psicopedagogía</option>
         </select>
     </div>
 
         <div>
-        <label form="disiplina">Disiplina.</label>
-        <select>
-            <option selected disabled>Selecciona una opción.</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option> 
+        <label form="disciplina">Disiplina:  </label>
+        <select formControlName="disciplina">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option> 
         </select>
         </div>
     </div> 
@@ -58,19 +59,17 @@
     <div class="input_div">
      <div>
     <label>¿Ha sido mienbro del Sistema Veracruzano de Investigadores en ediciones anteriores, SVI?</label>
-    <select>
-        <option selected disabled>Selecciona una opción.</option>
-        <option>sí</option>
-        <option>No</option> 
+    <select formControlName="ques1">
+        <option value="sí">sí</option>
+        <option value="No">No</option> 
     </select>
     </div>
 
     <div>
         <label form="p3">¿Participó como estudiante en algun programa de Verano de Investigación Científica?</label>
-        <select>
-        <option selected disabled>Selecciona una opción.</option>
-        <option>sí</option>
-        <option>No</option> 
+        <select formControlName="ques2">
+        <option value="sí">sí</option>
+        <option value="No">No</option> 
     </select> 
     </div>
     </div>
@@ -78,21 +77,20 @@
     <div class="input_div">
     <div>
      <label form="programa">¿En que programa?</label>
-     <input type="text" id="programa" programa="user:programa">
+     <input type="text" formControlName="ques3" id="programa" name="ques3">
     </div>
 
     <div>
         <label>¿En que año?</label>
-        <select>
-            <option disabled selected>Selecione.</option>
-            <option>2022</option>
+        <select formControlName="ques4">
+            <option value="2022">2022</option>
             <option>...</option>
         </select>
     </div>
 </div>
 
 <div class="button_div">
-    <button type="submit" (click)="guardar()" >Guardar</button>
+    <button type="submit">Guardar</button>
     <button id="next_button" type="submit" (click)="siguiente()"  href='/formacion-academica()'>Siguiente</button>
  </div>
 </form>

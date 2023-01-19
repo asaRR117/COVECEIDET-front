@@ -16,6 +16,8 @@ import { SniComponent } from './protected/sni/sni.component';
 import { PproyectoComponent } from './protected/pproyecto/pproyecto.component';
 import { IacademicaComponent } from './protected/iacademica/iacademica.component';
 import { PcientificaComponent } from './protected/pcientifica/pcientifica.component';
+import { PinvestigacionComponent } from './protected/pinvestigacion/pinvestigacion.component';
+import { DivulgacionComponent } from './protected/divulgacion/divulgacion.component';
 
 const routes: Routes = [
 
@@ -48,7 +50,7 @@ const routes: Routes = [
     path: 'grado_academico', component: GacademicoComponent 
   },
   {
-    path: 'imp_tecnologica', component: ItecnologicaComponent
+    path: 'implementacion_tecnologica', component: ItecnologicaComponent
   },
   {
     path: 'libro', component: LibroComponent
@@ -73,6 +75,12 @@ const routes: Routes = [
   },
   {
     path: 'produccion_cientifica', component: PcientificaComponent 
+  },
+  {
+    path: 'proyectos_investigacion', component: PinvestigacionComponent 
+  },
+  {
+    path: 'divulgacion', component: DivulgacionComponent 
   },
   {
     path: '**',
